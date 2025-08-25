@@ -1,0 +1,139 @@
+ <!DOCTYPE html>
+  <html lang="ko">
+  <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>골드스텝 - 걸을수록 커지는 보상 </title>
+      <style>
+          body {
+              font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+              margin: 0;
+              padding: 0;
+              background: linear-gradient(135deg, #FFF8E1 0%, #FFE082 100%);
+              min-height: 100vh;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+          }
+          .container {
+              text-align: center;
+              padding: 20px;
+              max-width: 400px;
+          }
+          .logo {
+              width: 120px;
+              height: 120px;
+              margin: 0 auto 20px;
+              background: #FFB300;
+              border-radius: 30px;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              font-size: 60px;
+          }
+          h1 {
+              color: #F57C00;
+              margin-bottom: 10px;
+          }
+          .subtitle {
+              color: #795548;
+              margin-bottom: 30px;
+              font-size: 18px;
+          }
+          .referral-info {
+              background: white;
+              padding: 20px;
+              border-radius: 15px;
+              box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+              margin-bottom: 30px;
+          }
+          .referral-code {
+              font-size: 24px;
+              font-weight: bold;
+              color: #F57C00;
+              background: #FFF8E1;
+              padding: 10px 20px;
+              border-radius: 10px;
+              display: inline-block;
+              margin: 10px 0;
+          }
+          .loading {
+              color: #795548;
+              font-size: 18px;
+          }
+          .app-badges {
+              margin-top: 20px;
+          }
+          .app-badge {
+              display: inline-block;
+              margin: 10px;
+          }
+          .app-badge img {
+              height: 60px;
+          }
+      </style>
+  </head>
+  <body>
+      <div class="container">
+      
+          <h1>골드스텝</h1>
+          <p class="subtitle">친구가 초대했어요! 🍯</p>
+
+          <div class="referral-info" id="referralInfo">
+              <p>초대 코드</p>
+              <div class="referral-code" id="referralCode">로딩중...</div>
+          </div>
+
+          <div class="loading" id="loadingText">
+              앱으로 이동 중입니다...
+          </div>
+
+          <div class="app-badges" id="appBadges" style="display: none;">
+              <p>앱이 설치되어 있지 않으신가요?</p>
+              <a class="app-badge" href="https://play.google.com/store/apps/details?id=com.goldmanbo.goldmanbo" target="_blank">
+                  <img src="https://play.google.com/intl/en_us/badges/static/images/badges/ko_badge_web_generic.png" alt="Google Play에서 다운로드">
+              </a>
+          </div>
+      </div>
+
+      <script>
+          // URL에서 추천 코드 추출
+          const urlParams = new URLSearchParams(window.location.search);
+          const referralCode = urlParams.get('code');
+
+          if (referralCode) {
+              // 추천 코드 표시
+              document.getElementById('referralCode').textContent = referralCode;
+
+              // 1. 먼저 앱으로 딥링크 시도
+              const deepLink = `goldmanbo://referral?code=${referralCode}`;
+              window.location.href = deepLink;
+
+              // 2. 2초 후에도 페이지에 있으면 (앱이 없는 경우) 플레이스토어로 이동
+              setTimeout(() => {
+                  // 페이지가 아직 보이는지 확인 (앱이 열리지 않은 경우)
+                  if (!document.hidden) {
+                      document.getElementById('loadingText').textContent = '플레이스토어로 이동합니다...';
+                      document.getElementById('appBadges').style.display = 'block';
+
+                      // 플레이스토어로 자동 이동
+                      window.location.href = 'https://play.google.com/store/apps/details?id=com.goldmanbo.goldmanbo';
+                  }
+              }, 2000);
+          } else {
+              // 추천 코드가 없는 경우
+              document.getElementById('referralInfo').innerHTML = '<p>유효하지 않은 초대 링크입니다.</p>';
+              document.getElementById('loadingText').style.display = 'none';
+              document.getElementById('appBadges').style.display = 'block';
+          }
+
+          // 페이지 가시성 변경 감지 (앱이 열렸는지 확인)
+          document.addEventListener('visibilitychange', () => {
+              if (document.hidden) {
+                  // 앱이 열려서 페이지가 백그라운드로 갔음
+                  console.log('앱이 열렸습니다!');
+              }
+          });
+      </script>
+  </body>
+  </html>
