@@ -3,44 +3,95 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GoldManbo - 골드스텝</title>
-    <style>
-        body { 
-            font-family: Arial, sans-serif; 
-            text-align: center; 
-            padding: 50px;
-            background: linear-gradient(135deg, #FFD700, #FFA500);
-            min-height: 100vh;
-            margin: 0;
-        }
-        .container {
-            background: white;
-            border-radius: 20px;
-            padding: 40px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            max-width: 600px;
-            margin: 0 auto;
-        }
-        h1 { 
-            color: #FF6B35; 
-            font-size: 3em;
-            margin-bottom: 20px;
-        }
-        p { 
-            font-size: 1.2em; 
-            color: #333;
-            line-height: 1.6;
-        }
-        .bee { font-size: 4em; margin: 20px 0; }
-    </style>
+    <meta name="description" content="골드스텝 - 걸음으로 포인트를 적립하는 리워드 앱">
+    <meta name="keywords" content="골드스텝, GoldManbo, 걷기앱, 리워드앱, 포인트적립">
+    <meta property="og:title" content="골드스텝 - 걸음으로 포인트를 적립하는 리워드 앱">
+    <meta property="og:description" content="매일 걸어서 꿀벌 코인을 모아보세요! 건강한 습관으로 달콤한 보상을 받아가세요.">
+    <meta property="og:type" content="website">
+    <title>골드스텝 - 서비스 소개</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="container">
-        <div class="bee">🐝</div>
-        <h1>GoldManbo</h1>
-        <p><strong>걸음으로 포인트를 적립하는 리워드 앱</strong></p>
-        <p>매일 걸어서 꿀벌 코인을 모아보세요!</p>
-        <p>건강한 습관으로 달콤한 보상을 받아가세요.</p>
+        <!-- 헤더 섹션 -->
+        <header class="header">
+            <div class="bee-icon">🐝</div>
+            <h1 class="app-title">골드스텝</h1>
+            <p class="app-subtitle">걸음으로 포인트를 적립하는 리워드 앱</p>
+        </header>
+
+        <!-- 서비스 소개 섹션 -->
+        <section class="service-intro">
+            <h2>서비스 소개</h2>
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🚶‍♂️</div>
+                    <h3>걸음수 측정</h3>
+                    <p>매일 걸음수를 측정하고 건강한 생활습관을 만들어보세요</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🍯</div>
+                    <h3>꿀벌 코인 적립</h3>
+                    <p>걸음마다 꿀벌 코인을 모아 달콤한 보상을 받아가세요</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🎯</div>
+                    <h3>다양한 미션</h3>
+                    <p>퀴즈, 복권, 미션 등 재미있는 활동으로 추가 포인트 획득</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🎁</div>
+                    <h3>리워드 교환</h3>
+                    <p>적립한 포인트로 다양한 상품과 혜택을 받아보세요</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 다운로드 섹션 -->
+        <section class="download-section">
+            <h2>지금 바로 시작하세요!</h2>
+            <p class="download-desc">구글 플레이스토어에서 골드스텝을 다운로드하고<br>건강한 습관으로 보상받는 즐거움을 경험해보세요.</p>
+            <a href="https://play.google.com/store/apps/details?id=com.goldmanbo.goldmanbo" class="download-btn" target="_blank" rel="noopener noreferrer">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/78/Google_Play_Store_badge_EN.svg/2560px-Google_Play_Store_badge_EN.svg.png" alt="Google Play에서 다운로드하기" class="playstore-badge">
+            </a>
+        </section>
+
+        <!-- 사업자 정보 섹션 -->
+        <section class="business-info">
+            <h2>사업자 정보</h2>
+            <div class="info-grid">
+                <div class="info-item">
+                    <span class="info-label">상호명</span>
+                    <span class="info-value">골드스텝 (GoldManbo)</span>
+                </div>
+                <div class="info-item">
+                    <span class="info-label">대표자</span>
+                    <span class="info-value">유은열</span>
+                </div>
+                <div class="info-item">
+                    <span class="info-label">이메일</span>
+                    <span class="info-value">qkqntnftk306@gmail.com</span>
+                </div>
+                <div class="info-item">
+                    <span class="info-label">연락처</span>
+                    <span class="info-value">010-5579-3614</span>
+                </div>
+                <div class="info-item">
+                    <span class="info-label">개인정보보호책임자</span>
+                    <span class="info-value">유은열</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- 푸터 링크 섹션 -->
+        <footer class="footer">
+            <div class="footer-links">
+                <a href="https://yooeunyeoul.github.io/goldmanbo_privacy/index.html" target="_blank" rel="noopener noreferrer">개인정보처리방침</a>
+                <span class="divider">|</span>
+                <a href="mailto:qkqntnftk306@gmail.com">문의하기</a>
+            </div>
+            <p class="copyright">© 2025 골드스텝. All rights reserved.</p>
+        </footer>
     </div>
 </body>
 </html>
