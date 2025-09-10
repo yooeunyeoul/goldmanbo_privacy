@@ -1,0 +1,486 @@
+/* 기본 스타일 초기화 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    background-color: #f5f5f5;
+    color: #333;
+    line-height: 1.6;
+}
+
+.proposal-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    background-color: white;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+/* 표지 페이지 */
+.cover-page {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #FFE8A3 0%, #FFD27F 100%);
+    text-align: center;
+    padding: 40px;
+}
+
+.cover-content {
+    background: white;
+    padding: 60px 40px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+    width: 120px;
+    height: 120px;
+    margin-bottom: 30px;
+    border-radius: 25px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.main-title {
+    font-size: 48px;
+    color: #FF6B35;
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+.subtitle {
+    font-size: 28px;
+    color: #666;
+    margin-bottom: 30px;
+    font-weight: 400;
+}
+
+.cover-info {
+    margin-top: 40px;
+}
+
+.cover-info p {
+    font-size: 18px;
+    color: #666;
+    margin: 10px 0;
+}
+
+.date {
+    font-weight: 600;
+    color: #FF6B35;
+}
+
+/* 목차 */
+.table-of-contents {
+    padding: 80px 60px;
+    background-color: #FAFAFA;
+}
+
+.table-of-contents h2 {
+    font-size: 36px;
+    color: #FF6B35;
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.table-of-contents ol {
+    max-width: 600px;
+    margin: 0 auto;
+    font-size: 20px;
+    line-height: 2;
+}
+
+.table-of-contents li {
+    color: #333;
+    margin-left: 30px;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.table-of-contents li:hover {
+    color: #FF6B35;
+}
+
+/* 일반 섹션 */
+.section {
+    padding: 80px 60px;
+    border-bottom: 1px solid #eee;
+}
+
+.section h2 {
+    font-size: 36px;
+    color: #FF6B35;
+    margin-bottom: 40px;
+}
+
+.section h3 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* 서비스 개요 */
+.overview-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.overview-item {
+    background: #FFF9E6;
+    padding: 30px;
+    border-radius: 15px;
+    text-align: center;
+}
+
+.overview-item h3 {
+    color: #FF6B35;
+    margin-bottom: 10px;
+}
+
+.overview-item p {
+    font-size: 18px;
+    color: #333;
+}
+
+.service-description {
+    background: #f8f8f8;
+    padding: 30px;
+    border-radius: 15px;
+    font-size: 18px;
+    line-height: 1.8;
+}
+
+/* 배경 및 목적 */
+.background-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 40px;
+}
+
+.background-item {
+    background: #FFF9E6;
+    padding: 40px;
+    border-radius: 15px;
+}
+
+.background-item ul {
+    list-style-position: inside;
+    margin-top: 20px;
+}
+
+.background-item li {
+    margin: 15px 0;
+    font-size: 16px;
+    color: #555;
+}
+
+/* 타겟 사용자 */
+.user-segment {
+    background: #f8f8f8;
+    padding: 40px;
+    border-radius: 15px;
+}
+
+.user-card {
+    background: white;
+    padding: 25px;
+    margin: 20px 0;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+.user-card h4 {
+    color: #FF6B35;
+    margin-bottom: 10px;
+}
+
+/* 핵심 기능 */
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.feature-detail {
+    background: #FFF9E6;
+    padding: 30px;
+    border-radius: 15px;
+    transition: transform 0.3s ease;
+}
+
+.feature-detail:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+}
+
+.feature-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.feature-emoji {
+    font-size: 36px;
+}
+
+.feature-detail ul {
+    list-style-position: inside;
+    color: #555;
+}
+
+.feature-detail li {
+    margin: 10px 0;
+}
+
+/* 수익 모델 */
+.revenue-model {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.revenue-item {
+    background: #f8f8f8;
+    padding: 30px;
+    border-radius: 15px;
+    border-left: 5px solid #FF6B35;
+}
+
+.revenue-item h3 {
+    color: #FF6B35;
+}
+
+.revenue-item ul {
+    margin-top: 15px;
+    list-style-position: inside;
+}
+
+.revenue-item li {
+    margin: 10px 0;
+    color: #555;
+}
+
+/* 경쟁력 */
+.competitive-advantages {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.advantage-card {
+    background: #FFF9E6;
+    padding: 30px;
+    border-radius: 15px;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.advantage-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+}
+
+.advantage-card h3 {
+    color: #FF6B35;
+    margin-bottom: 15px;
+}
+
+/* 카카오 채널 섹션 */
+.highlight-section {
+    background: #FFF9E6;
+}
+
+.kakao-plan {
+    background: white;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 3px 15px rgba(0, 0, 0, 0.1);
+}
+
+.kakao-purpose, .kakao-content {
+    margin-bottom: 40px;
+}
+
+.content-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+    margin-top: 25px;
+}
+
+.content-item {
+    background: #f8f8f8;
+    padding: 25px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.content-item h4 {
+    color: #FF6B35;
+    margin-bottom: 10px;
+}
+
+/* 로드맵 */
+.roadmap {
+    display: grid;
+    gap: 30px;
+}
+
+.roadmap-item {
+    display: grid;
+    grid-template-columns: 150px 1fr;
+    gap: 30px;
+    align-items: start;
+}
+
+.timeline {
+    background: #FF6B35;
+    color: white;
+    padding: 15px 25px;
+    border-radius: 10px;
+    font-weight: 700;
+    font-size: 18px;
+    text-align: center;
+}
+
+.roadmap-item h3 {
+    margin-bottom: 15px;
+}
+
+.roadmap-item ul {
+    list-style-position: inside;
+}
+
+.roadmap-item li {
+    margin: 10px 0;
+    color: #555;
+}
+
+/* 연락처 */
+.contact-section {
+    background: #333;
+    color: white;
+    padding: 60px;
+    text-align: center;
+}
+
+.contact-section h2 {
+    color: white;
+    margin-bottom: 40px;
+}
+
+.contact-info {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.contact-item {
+    margin: 15px 0;
+    font-size: 18px;
+}
+
+.contact-item strong {
+    color: #FFD27F;
+}
+
+.contact-item a {
+    color: #FFD27F;
+    text-decoration: none;
+    transition: opacity 0.3s ease;
+}
+
+.contact-item a:hover {
+    opacity: 0.8;
+}
+
+/* 반응형 디자인 */
+@media (max-width: 768px) {
+    .proposal-container {
+        margin: 0;
+        box-shadow: none;
+    }
+
+    .section, .table-of-contents {
+        padding: 40px 30px;
+    }
+
+    .main-title {
+        font-size: 36px;
+    }
+
+    .subtitle {
+        font-size: 22px;
+    }
+
+    .section h2 {
+        font-size: 28px;
+    }
+
+    .section h3 {
+        font-size: 20px;
+    }
+
+    .overview-grid,
+    .features-grid,
+    .competitive-advantages,
+    .content-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .background-content {
+        grid-template-columns: 1fr;
+    }
+
+    .roadmap-item {
+        grid-template-columns: 1fr;
+    }
+
+    .timeline {
+        margin-bottom: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .cover-content {
+        padding: 40px 20px;
+    }
+
+    .section, .table-of-contents {
+        padding: 30px 20px;
+    }
+
+    .logo {
+        width: 80px;
+        height: 80px;
+    }
+
+    .main-title {
+        font-size: 28px;
+    }
+
+    .table-of-contents ol {
+        font-size: 16px;
+    }
+}
+
+/* 인쇄 스타일 */
+@media print {
+    .cover-page {
+        page-break-after: always;
+    }
+
+    .section {
+        page-break-inside: avoid;
+    }
+
+    .table-of-contents {
+        page-break-after: always;
+    }
+}
